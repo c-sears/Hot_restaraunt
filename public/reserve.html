@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <title>Hot Restaurant-Reserve</title>
 <!-- Latest compiled and minified CSS & JS -->
@@ -13,7 +16,7 @@
             <h1>Hot Restaurant</h1>
             <hr>
             <h3>Make your reservation!</h3>
-                <a href="/tables"><button class="btn btn-danger btn-lg"></span> View Tables</button></a>
+                <a href="/tables"><button class="btn btn-danger btn-lg" id="view"></span>View Tables</button></a>
                 <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
     </div> 
 </div>
@@ -39,9 +42,17 @@
                 <label for="uniqueid">Unique Id:</label>
                 <input type="text" class="form-control" id="uniqueid" placeholder="Unique Id">
         </div>
+        <div class="text-right">
+                <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span>Add Reservation</button>
+        </div>
     </form>
     </div>
 </div>
 </div>
+<script type="text/javascript">
+$("#view").on("click", function() {
+    
+
+</script>
 </body>
 
