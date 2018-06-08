@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
                 <label for="phonenumber">Phone Number:</label>
-                <input type="tel" class="form-control" id="phonenumber" placeholder="Phone Number">
+                <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
         </div>
         <div class="form-group">
                 <label for="email">Email:</label>
@@ -50,7 +50,21 @@
 </div>
 </div>
 <script type="text/javascript">
-    
+   $("#add-btn").on("click", function(event){
+
+       event.preventDefault();
+       var newReservation = {
+           name: $("#name").val().trim(),
+           phone: $("#phone").val().trim(),
+           email: $("#email").val().trim(),
+           uniqueid: $("#uniqueid").val().trim()
+       };
+    $.post("/api/reserve", newReservation)
+       .then (function(data){
+           console.log("add.html", data);
+           alert("Reservation added.");
+       });
+   });
 
 </script>
 </body>
