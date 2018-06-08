@@ -1,12 +1,10 @@
 var path = require('path')
-var bodyParser = require('body-parser')
 var tableData = require('../data/tableData')
 var waitingData = require('../data/waitingListData')
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
-exports.check_route = function(app){
+
+exports.check_api_route = function(app){
     // Updates reservation array on api call
     app.post('/api/reserve', (req, res)=>{
         var new_reservation = req.body
