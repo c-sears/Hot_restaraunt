@@ -8,7 +8,11 @@ exports.check_api_route = function(app){
     // Updates reservation array on api call
     app.post('/api/reserve', (req, res)=>{
         var new_reservation = req.body
-        console.log(new_reservation)
+        if(tableData.reservations.length < 5){
+            tableData.reservations.push(new_reservation)
+        } else {
+            waitingData.waiting_list.push(new_reservation)
+        }
     })
     // Return array of reservation objects on api call
     app.get('/api/tables', (req, res)=>{
