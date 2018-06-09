@@ -4,7 +4,7 @@ var { check_api_route } = require('./routes/apiRoutes')
 var { check_html_route } = require('./routes/htmlRoutes')
 
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
